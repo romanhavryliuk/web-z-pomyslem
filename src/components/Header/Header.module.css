@@ -27,12 +27,37 @@
 }
 
 .link {
+  position: relative;
   display: block;
   padding: 10px 0;
   color: var(--color-choco);
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
+}
+
+.link::after {
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+  left: 0;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--color-terra);
+  content: '';
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--motion-fast) var(--motion-ease);
+}
+
+.link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link:hover::after {
+    transform: scaleX(1);
+  }
 }
 
 @media screen and (min-width: 768px) {

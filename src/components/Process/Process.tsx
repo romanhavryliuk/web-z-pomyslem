@@ -19,7 +19,7 @@ export const Process = () => {
         lead={processSection.lead}
         isWideLead
       />
-      <ol className={css.steps}>
+      <ol className={css.steps} data-reveal>
         {processSection.steps.map((step, index) => (
           <li key={step.id} className={css.step}>
             <ProcessBulb level={index + 1} />

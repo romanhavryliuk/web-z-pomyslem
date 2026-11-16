@@ -1,106 +1,122 @@
+.scene {
+  position: relative;
+  isolation: isolate;
+}
+
+.bulbButton {
+  position: absolute;
+  left: 60%;
+  top: 33%;
+  width: 33%;
+  height: 53%;
+  border: 0;
+  border-radius: 48%;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.bulbButton:focus-visible {
+  outline: 2px dashed var(--color-terra);
+  outline-offset: 6px;
+}
+
 .svg {
   --look-x: 0;
   --look-y: 0;
+  --gaze-x: 0;
+  --gaze-y: 0;
+  --interest: 0;
+  --vergence: 0;
+  --joy: 0;
+  --left-open: 1;
+  --right-open: 1;
 
   width: 100%;
   height: auto;
   overflow: visible;
 }
 
-.float {
-  animation: float 4.5s ease-in-out infinite;
-}
-
 .bulb {
   transform-origin: 100px 200px;
-  transform: rotate(calc(var(--look-x) * 7deg));
-  transition: transform 350ms ease-out;
+  transform: translate(calc(var(--look-x) * 2px), calc(var(--look-y) * 1px))
+    rotate(calc(var(--look-x) * 5deg));
 }
 
 .face {
-  transform: translate(calc(var(--look-x) * 7px), calc(var(--look-y) * 5px));
-  transition: transform 180ms ease-out;
+  transform: translate(calc(var(--look-x) * 2px), calc(var(--look-y) * 1.5px));
 }
 
-.eyes {
-  transform: translate(calc(var(--look-x) * 4px), calc(var(--look-y) * 3px));
-  transition: transform 140ms ease-out;
-}
-
-.blink {
+.eyeShape {
   transform-box: fill-box;
   transform-origin: center;
-  animation: blink 6s ease-in-out infinite;
+  transform: scaleY(calc(1 + var(--interest) * 0.06));
+}
+
+/* Only the aperture closes. The iris and its reflections keep their shape. */
+.aperture {
+  transform: translateY(calc((1 - var(--lid-open)) * 3px))
+    scaleY(var(--lid-open));
+}
+
+.closedLid {
+  opacity: clamp(0, calc((0.25 - var(--lid-open)) * 4), 1);
+}
+
+.pupil {
+  transform: translate(
+    calc((var(--gaze-x) + var(--eye-side) * var(--vergence)) * 5px),
+    calc(var(--gaze-y) * 4.5px)
+  );
+}
+
+.iris {
+  transform: scale(calc(1 + var(--interest) * 0.1 + var(--joy) * 0.08));
 }
 
 .glow {
-  transform-origin: 420px 210px;
-  animation: glow 4.5s ease-in-out infinite;
+  opacity: calc(0.65 + var(--interest) * 0.2 + var(--joy) * 0.15);
 }
 
 .rays {
-  transform-origin: 426px 240px;
-  animation: rays 4.5s ease-in-out infinite;
+  opacity: calc(0.65 + var(--interest) * 0.2 + var(--joy) * 0.15);
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-9px);
-  }
+.browLeft {
+  transform-origin: 77px 83px;
+  transform: translateY(calc(var(--interest) * -3px + var(--joy) * -1px))
+    rotate(calc(var(--interest) * -4deg));
 }
 
-@keyframes blink {
-  0%,
-  43%,
-  47%,
-  100% {
-    transform: scaleY(1);
-  }
-  45% {
-    transform: scaleY(0.08);
-  }
+.browRight {
+  transform-origin: 119px 83px;
+  transform: translateY(calc(var(--interest) * -1.5px + var(--joy) * -2px));
 }
 
-@keyframes glow {
-  0%,
-  100% {
-    opacity: 0.65;
-    transform: scale(0.96);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.04);
-  }
-}
-
-@keyframes rays {
-  0%,
-  100% {
-    opacity: 0.65;
-    transform: translateY(0);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(-5px);
-  }
+.smile {
+  transform-origin: 98px 132px;
+  transform: scale(calc(1 + var(--interest) * 0.05 + var(--joy) * 0.12));
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .float,
-  .blink,
-  .glow,
-  .rays {
-    animation: none;
-  }
-
   .bulb,
   .face,
-  .eyes {
+  .eyeShape,
+  .pupil,
+  .iris,
+  .browLeft,
+  .browRight,
+  .smile {
     transform: none;
-    transition: none;
+  }
+
+  .aperture {
+    transform: none;
+  }
+
+  .closedLid {
+    opacity: 0;
   }
 }

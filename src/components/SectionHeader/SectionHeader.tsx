@@ -21,7 +21,7 @@ export const SectionHeader = ({
   const leadClass = isWideLead ? css.leadWide : css.lead;
 
   return (
-    <div className={`${css.header} ${toneClass}`}>
+    <div className={`${css.header} ${toneClass}`} data-reveal>
       <p className={css.eyebrow}>{eyebrow}</p>
       <h2 id={titleId} className={css.title}>
         {title}

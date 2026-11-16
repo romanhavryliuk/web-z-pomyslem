@@ -33,6 +33,16 @@
   font: inherit;
   font-size: 16px;
   font-weight: 400;
+  transition:
+    border-color var(--motion-fast) ease,
+    background-color var(--motion-fast) ease,
+    box-shadow var(--motion-fast) ease;
+}
+
+.input:focus {
+  border-color: var(--color-terra);
+  background-color: var(--color-surface);
+  box-shadow: 0 0 0 4px rgb(185 78 39 / 0.08);
 }
 
 .textarea {
@@ -74,6 +84,25 @@
   background-color: var(--color-field-bg);
   font-size: 15px;
   cursor: pointer;
+  transition:
+    background-color var(--motion-fast) ease,
+    border-color var(--motion-fast) ease;
+}
+
+.option:has(.checkbox:checked) {
+  border-color: var(--color-terra);
+  background-color: #f9e8c3;
+}
+
+.option:has(.checkbox:focus-visible) {
+  outline: 2px solid var(--color-choco);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .option:hover {
+    border-color: var(--color-terra);
+  }
 }
 
 .checkbox {

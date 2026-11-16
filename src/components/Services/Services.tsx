@@ -20,7 +20,7 @@ export const Services = () => {
         titleId={TITLE_ID}
         lead={servicesSection.lead}
       />
-      <ul className={css.grid}>
+      <ul className={css.grid} data-reveal>
         {services.map((service) => (
           <li key={service.id} className={css.gridItem}>
             <ServiceCard

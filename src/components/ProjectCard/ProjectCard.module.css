@@ -5,6 +5,28 @@
   overflow: hidden;
   border-radius: 24px;
   background-color: var(--color-dark-card);
+  transition:
+    transform var(--motion-normal) var(--motion-ease),
+    box-shadow var(--motion-normal) var(--motion-ease);
+}
+
+.card:focus-within {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px -16px rgb(0 0 0 / 0.4);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px -16px rgb(0 0 0 / 0.4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card:hover,
+  .card:focus-within {
+    transform: none;
+  }
 }
 
 .body {

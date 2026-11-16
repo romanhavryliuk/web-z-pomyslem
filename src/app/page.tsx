@@ -6,6 +6,7 @@ import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { Process } from '@/components/Process';
+import { PageMotion } from '@/components/PageMotion/PageMotion';
 import { Projects } from '@/components/Projects';
 import { Services } from '@/components/Services';
 import { TrustBar } from '@/components/TrustBar';
@@ -26,6 +27,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <PageMotion />
     </>
   );
 }

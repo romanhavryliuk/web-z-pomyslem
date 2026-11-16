@@ -23,6 +23,9 @@
   --color-dark-card: #3a2f28;
   --color-on-dark-muted: #d9cdbf;
   --color-on-dark-text: #e3d8cb;
+  --motion-fast: 180ms;
+  --motion-normal: 240ms;
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
 
   /* --font-unbounded і --font-onest задає next/font у layout.tsx */
   --font-display: var(--font-unbounded), sans-serif;
@@ -49,6 +52,25 @@ body {
   font-family: var(--font-sans);
   font-size: 18px;
   line-height: 1.55;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 28px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0ms;
+    --motion-normal: 0ms;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 h1,

@@ -22,7 +22,7 @@ export const Projects = () => {
           isDark
         />
         <FeaturedProject />
-        <ul className={css.grid}>
+        <ul className={css.grid} data-reveal>
           {projects.map((project) => (
             <li key={project.id} className={css.gridItem}>
               <ProjectCard project={project} />
