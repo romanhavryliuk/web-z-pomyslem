@@ -1,0 +1,237 @@
+.card {
+  display: grid;
+  overflow: hidden;
+  border-radius: 32px;
+  background-color: var(--color-surface);
+  color: var(--color-choco);
+}
+
+/* Кольори мініатюри — це бренд OD NOWA, тому вони локальні, а не з токенів сайту. */
+.mock {
+  --od-bg: #e9e4d6;
+  --od-page: #f3f1e9;
+  --od-light: #fffef8;
+  --od-dark: #3a3c31;
+  --od-darker: #272922;
+  --od-accent: #dfb239;
+  --od-dot: #d4d5c9;
+  --od-muted: #e8e6da;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 320px;
+  padding: 24px;
+  background-color: var(--od-bg);
+}
+
+.browser {
+  flex: 0 1 420px;
+  overflow: hidden;
+  border-radius: 14px;
+  background-color: var(--od-page);
+  box-shadow: 0 30px 40px -24px rgb(42 33 28 / 0.45);
+}
+
+.browserBar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 22px;
+  padding: 0 10px;
+  background-color: var(--od-light);
+}
+
+.browserDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background-color: var(--od-dot);
+}
+
+.browserHero {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 26px 24px 30px;
+  background-color: var(--od-dark);
+}
+
+.mockEyebrow {
+  color: var(--od-muted);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+
+.mockTitle {
+  color: var(--od-light);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.mockLine {
+  width: 70%;
+  height: 6px;
+  border-radius: 3px;
+  background-color: var(--od-light);
+  opacity: 0.6;
+}
+
+.mockButton {
+  align-self: flex-start;
+  margin-top: 6px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background-color: var(--od-accent);
+  color: var(--od-darker);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.browserFeatures {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  padding: 14px;
+}
+
+.mockFeature {
+  color: var(--od-darker);
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.phone {
+  flex: none;
+  width: 104px;
+  margin-bottom: -12px;
+  margin-left: -48px;
+  padding: 6px;
+  border-radius: 20px;
+  background-color: var(--od-darker);
+  box-shadow: 0 24px 32px -18px rgb(42 33 28 / 0.55);
+}
+
+.phoneScreen {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 190px;
+  padding: 14px 10px;
+  border-radius: 15px;
+  background-color: var(--od-dark);
+}
+
+.phoneTitle {
+  color: var(--od-light);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.phoneLine {
+  width: 80%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--od-light);
+  opacity: 0.6;
+}
+
+.phoneLineShort {
+  width: 60%;
+}
+
+.phoneButton {
+  height: 18px;
+  margin-top: auto;
+  border-radius: 999px;
+  background-color: var(--od-accent);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 28px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+}
+
+.lead {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.description {
+  color: var(--color-muted);
+}
+
+.tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+}
+
+.techItem {
+  padding: 6px 12px;
+  border-radius: 999px;
+  box-shadow: inset 0 2px 5px rgb(42 33 28 / 0.12);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.codeLink {
+  color: var(--color-link);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media screen and (min-width: 768px) {
+  .mock {
+    padding: 32px;
+  }
+
+  .info {
+    padding: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .card {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mock {
+    padding: 48px;
+  }
+
+  .info {
+    padding: 48px;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+}

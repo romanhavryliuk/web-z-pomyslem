@@ -34,7 +34,8 @@ export const hero = {
     'Projektuję i koduję szybkie strony oraz boty na Telegramie dla małych firm z Łodzi. Rozmawiasz bezpośrednio z osobą, która pisze kod, a cenę znasz przed startem.',
   primaryCta: { label: 'Wyceń projekt →', href: '#kontakt' },
   secondaryCta: { label: 'Zobacz projekty ↓', href: '#projekty' },
-  note: 'Landing od 1 800 zł · wycena w 1–2 dni · wolne terminy: [miesiąc]',
+  note: 'Landing od 1 800 zł · wycena w 1–2 dni · wolne terminy: ',
+  noteHighlight: '[miesiąc]',
   mascotAlt: 'Gliniana żarówka z uśmiechem przy oknie przeglądarki',
 } as const;
 
@@ -139,16 +140,23 @@ export const featuredProject = {
   lead: 'Landing page usługi prania kanap z dojazdem w Łodzi.',
   description:
     'Strona jest kompletna: mobile-first, lekkie zdjęcia WebP, jasna oferta i formularz zapytania (w trybie demo). Tak może wyglądać Twoja.',
-  tech: ['HTML', 'CSS', 'JavaScript', 'Vite', 'GitHub Pages'],
+  tech: ['HTML · CSS · JavaScript', 'Vite', 'GitHub Pages'],
   demo: {
     label: 'Zobacz demo →',
     href: 'https://romanhavryliuk.github.io/od-nowa/',
   },
   code: {
-    label: 'Kod na GitHubie →',
+    label: 'Kod na GitHubie',
     href: 'https://github.com/romanhavryliuk/od-nowa',
   },
   imageAlt: 'Strona OD NOWA na komputerze i telefonie',
+  // Тексти декоративної мініатюри сайту OD NOWA (з макету).
+  mock: {
+    eyebrow: 'Pranie kanap z dojazdem · Łódź',
+    title: 'Twoja kanapa.',
+    button: 'Wyceń pranie',
+    features: ['U Ciebie w domu', 'Z uwagą na tkaninę', 'Bez zgadywania ceny'],
+  },
 } as const;
 
 export const projects = [
@@ -240,11 +248,8 @@ export const about = {
   text: 'Jestem frontend developerem z Łodzi. Pracuję z Reactem, Next.js i TypeScriptem, a boty buduję w Node.js. Po godzinach tworzę muzykę, więc lubię, kiedy strona ma rytm. Rozmawiam po polsku i po ukraińsku.',
   chips: [
     'Polski i ukraiński',
-    'React',
-    'Next.js',
-    'TypeScript',
-    'Node.js',
-    'boty na Telegramie',
+    'React · Next.js · TypeScript',
+    'Node.js · boty na Telegramie',
     'Łódź',
   ],
   photoPlaceholder: '[Twoje zdjęcie]',

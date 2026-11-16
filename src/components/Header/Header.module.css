@@ -1,0 +1,61 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* На телефоні посилання не влазять у рядок — прокручуються вбік без смуги прокрутки. */
+.nav {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav::-webkit-scrollbar {
+  display: none;
+}
+
+.list {
+  display: flex;
+  gap: 24px;
+  padding: 0;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.link {
+  display: block;
+  padding: 10px 0;
+  color: var(--color-choco);
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav {
+    order: 1;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header {
+    flex-wrap: nowrap;
+    gap: 32px;
+  }
+
+  .nav {
+    order: 0;
+    width: auto;
+  }
+}

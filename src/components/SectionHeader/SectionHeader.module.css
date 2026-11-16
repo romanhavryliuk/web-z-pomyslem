@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.eyebrow {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-muted);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.lead,
+.leadWide {
+  margin-top: 2px;
+  color: var(--color-muted);
+}
+
+.lead {
+  max-width: 440px;
+}
+
+.leadWide {
+  max-width: 620px;
+}
+
+.dark .eyebrow,
+.dark .lead,
+.dark .leadWide {
+  color: var(--color-on-dark-muted);
+}
+
+@media screen and (min-width: 1440px) {
+  .title {
+    font-size: 56px;
+  }
+}

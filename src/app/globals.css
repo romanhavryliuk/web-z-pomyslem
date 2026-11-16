@@ -1,5 +1,5 @@
 /*
-  Брейкпоінти (mobile-first, min-width): база 375px · tablet 768px · desktop 1440px.
+  Брейкпоінти (mobile-first): @media screen and (min-width: 375px | 768px | 1440px).
   CSS-змінні не працюють усередині @media, тому в модулях ці числа пишемо напряму.
 */
 
@@ -15,6 +15,14 @@
   --color-sage: #a7b79a;
   --color-sage-dark: #5e7a4e;
   --color-powder: #ebb7a3;
+  --color-text-soft: #4a3d35;
+  --color-on-terra: #fff8ef;
+  --color-line: #d8c9b5;
+  --color-field-bg: #fffcf7;
+  --color-field-border: #9c8a76;
+  --color-dark-card: #3a2f28;
+  --color-on-dark-muted: #d9cdbf;
+  --color-on-dark-text: #e3d8cb;
 
   /* --font-unbounded і --font-onest задає next/font у layout.tsx */
   --font-display: var(--font-unbounded), sans-serif;
@@ -39,6 +47,43 @@ body {
   background-color: var(--color-cream);
   color: var(--color-choco);
   font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol {
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media screen and (min-width: 375px) {
+  .container {
+    width: 375px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+    padding: 0 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1440px;
+    padding: 0 140px;
+  }
 }
 
 img,

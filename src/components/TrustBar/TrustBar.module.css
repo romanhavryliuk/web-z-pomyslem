@@ -1,0 +1,45 @@
+.section {
+  padding-bottom: 72px;
+}
+
+.list {
+  display: grid;
+  gap: 16px 24px;
+  padding: 22px 0;
+  list-style: none;
+  border-top: 1.5px solid var(--color-line);
+  border-bottom: 1.5px solid var(--color-line);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  flex: none;
+  fill: none;
+  stroke: var(--color-sage-dark);
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media screen and (min-width: 768px) {
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .section {
+    padding-bottom: 120px;
+  }
+
+  .list {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

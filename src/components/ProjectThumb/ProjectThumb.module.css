@@ -1,0 +1,115 @@
+.thumb {
+  aspect-ratio: 16 / 10;
+  background-color: var(--color-text-soft);
+}
+
+.surface {
+  background-color: var(--color-surface);
+}
+
+.sage {
+  background-color: var(--color-sage);
+}
+
+.powder {
+  background-color: var(--color-powder);
+}
+
+.butter {
+  background-color: var(--color-butter);
+}
+
+/* Cosmogram */
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38%;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  box-shadow: 0 0 0 2px var(--color-on-dark-muted);
+}
+
+.planet {
+  width: 50%;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background-color: var(--color-butter);
+}
+
+/* mindterms */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 18px;
+}
+
+.tile {
+  border-radius: 10px;
+}
+
+/* PixaSearch */
+.search {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+}
+
+.searchBar {
+  height: 22px;
+  border-radius: 999px;
+  background-color: var(--color-surface);
+}
+
+.results {
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.result {
+  border-radius: 8px;
+}
+
+/* GetMatch UA */
+.chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 18px;
+}
+
+.bubble {
+  height: 22px;
+}
+
+.incoming {
+  align-self: flex-start;
+  border-radius: 12px 12px 12px 4px;
+  background-color: var(--color-surface);
+}
+
+.outgoing {
+  align-self: flex-end;
+  width: 45%;
+  border-radius: 12px 12px 4px 12px;
+  background-color: var(--color-butter);
+}
+
+.wide {
+  width: 55%;
+}
+
+.widest {
+  width: 65%;
+}

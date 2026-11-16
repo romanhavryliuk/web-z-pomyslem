@@ -1,0 +1,41 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+  background-color: var(--color-dark-card);
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px;
+}
+
+.type {
+  color: var(--color-on-dark-muted);
+  font-size: 13px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.description {
+  color: var(--color-on-dark-text);
+  font-size: 16px;
+}
+
+.link {
+  margin-top: auto;
+  color: var(--color-butter);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
