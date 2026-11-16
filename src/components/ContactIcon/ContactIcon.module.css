@@ -1,0 +1,7 @@
+.icon {
+  fill: none;
+  stroke: var(--color-cream);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

@@ -1,0 +1,1 @@
+export { FooterIllustration } from './FooterIllustration';

@@ -1,0 +1,122 @@
+.scene {
+  position: relative;
+  isolation: isolate;
+}
+
+.bulbButton {
+  position: absolute;
+  left: 60%;
+  top: 33%;
+  width: 33%;
+  height: 53%;
+  border: 0;
+  border-radius: 48%;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.bulbButton:focus-visible {
+  outline: 2px dashed var(--color-terra);
+  outline-offset: 6px;
+}
+
+.svg {
+  --look-x: 0;
+  --look-y: 0;
+  --gaze-x: 0;
+  --gaze-y: 0;
+  --interest: 0;
+  --vergence: 0;
+  --joy: 0;
+  --left-open: 1;
+  --right-open: 1;
+
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.bulb {
+  transform-origin: 100px 200px;
+  transform: translate(calc(var(--look-x) * 2px), calc(var(--look-y) * 1px))
+    rotate(calc(var(--look-x) * 5deg));
+}
+
+.face {
+  transform: translate(calc(var(--look-x) * 2px), calc(var(--look-y) * 1.5px));
+}
+
+.eyeShape {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scaleY(calc(1 + var(--interest) * 0.06));
+}
+
+/* Only the aperture closes. The iris and its reflections keep their shape. */
+.aperture {
+  transform: translateY(calc((1 - var(--lid-open)) * 3px))
+    scaleY(var(--lid-open));
+}
+
+.closedLid {
+  opacity: clamp(0, calc((0.25 - var(--lid-open)) * 4), 1);
+}
+
+.pupil {
+  transform: translate(
+    calc((var(--gaze-x) + var(--eye-side) * var(--vergence)) * 5px),
+    calc(var(--gaze-y) * 4.5px)
+  );
+}
+
+.iris {
+  transform: scale(calc(1 + var(--interest) * 0.1 + var(--joy) * 0.08));
+}
+
+.glow {
+  opacity: calc(0.65 + var(--interest) * 0.2 + var(--joy) * 0.15);
+}
+
+.rays {
+  opacity: calc(0.65 + var(--interest) * 0.2 + var(--joy) * 0.15);
+}
+
+.browLeft {
+  transform-origin: 77px 83px;
+  transform: translateY(calc(var(--interest) * -3px + var(--joy) * -1px))
+    rotate(calc(var(--interest) * -4deg));
+}
+
+.browRight {
+  transform-origin: 119px 83px;
+  transform: translateY(calc(var(--interest) * -1.5px + var(--joy) * -2px));
+}
+
+.smile {
+  transform-origin: 98px 132px;
+  transform: scale(calc(1 + var(--interest) * 0.05 + var(--joy) * 0.12));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bulb,
+  .face,
+  .eyeShape,
+  .pupil,
+  .iris,
+  .browLeft,
+  .browRight,
+  .smile {
+    transform: none;
+  }
+
+  .aperture {
+    transform: none;
+  }
+
+  .closedLid {
+    opacity: 0;
+  }
+}

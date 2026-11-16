@@ -1,0 +1,18 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-choco);
+  text-decoration: none;
+}
+
+.icon {
+  flex: none;
+}
+
+.text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
