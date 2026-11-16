@@ -2,7 +2,6 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": { "source.fixAll.eslint": "explicit" },
-  "files.associations": { "*.css": "tailwindcss" },
   "cSpell.language": "en,pl",
   "typescript.tsdk": "node_modules/typescript/lib"
 }
