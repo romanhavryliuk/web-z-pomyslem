@@ -309,7 +309,7 @@ export const faq = [
 
 export const contact = {
   id: 'kontakt',
-  status: 'Porozmawiajmy o Twoim projekcie',
+  status: 'Wolne terminy: [miesiąc]',
   title: 'Bezpłatna wycena albo mini-audyt Twojej strony',
   text: 'Napisz kilka słów o firmie. Odpowiem z wyceną albo pytaniami, a jeśli masz już stronę — także z mini-audytem.',
   // Заглушки в [дужках] Роман заповнює сам.
@@ -345,6 +345,7 @@ export const contact = {
 export const contactForm = {
   ariaLabel: 'Formularz kontaktowy',
   optionalHint: '(opcjonalnie)',
+  // isRequired — для серверної валідації на етапі відправки.
   fields: {
     name: {
       label: 'Imię',
@@ -381,12 +382,15 @@ export const contactForm = {
     after: '.',
   },
   submit: 'Wyślij zapytanie',
-  note: 'Odpowiadam w 1–2 dni robocze.',
-  // Нові рядки — потребують вичитки носієм.
+  note: 'Formularz jeszcze nie wysyła wiadomości. Do tego czasu napisz do mnie bezpośrednio — kontakty znajdziesz w tej sekcji.',
+  // notReady — поки форма не надсилає. Решта — для етапу відправки (Server Action), поки не використовується свідомо. Потребують вичитки носієм.
   messages: {
+    notReady:
+      'Wiadomość nie została wysłana — formularz jeszcze nie działa. Napisz do mnie bezpośrednio, kontakty znajdziesz w tej sekcji.',
     sending: 'Wysyłam…',
     success: 'Dziękuję! Twoje zapytanie dotarło. Odpowiem w 1–2 dni robocze.',
-    error: 'Coś poszło nie tak. Spróbuj ponownie albo napisz na Telegramie.',
+    error:
+      'Coś poszło nie tak. Spróbuj ponownie albo napisz na WhatsAppie lub e-mailem.',
     rateLimited: 'Za dużo prób. Spróbuj ponownie za kilka minut.',
     nameInvalid: 'Podaj swoje imię.',
     contactInvalid: 'Podaj e-mail lub numer telefonu, żebym mógł odpowiedzieć.',

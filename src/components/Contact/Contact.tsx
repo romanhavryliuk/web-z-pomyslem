@@ -11,7 +11,7 @@ export const Contact = () => {
     <section
       id={contact.id}
       aria-labelledby={TITLE_ID}
-      className={`container ${css.section}`}
+      className="container"
     >
       <div className={css.box}>
         <div className={css.intro}>
