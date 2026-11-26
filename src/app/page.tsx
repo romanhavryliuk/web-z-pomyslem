@@ -20,8 +20,8 @@ export default function Home() {
       <main id="tresc">
         <Hero />
         <TrustBar />
-        <Projects />
         <Services />
+        <Projects />
         <AuditBand />
         <Process />
         <About />

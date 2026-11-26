@@ -12,8 +12,8 @@ export const nav = {
   logo: 'web z pomysłem',
   ariaLabel: 'Główna nawigacja',
   links: [
-    { label: 'Projekty', href: '#projekty' },
     { label: 'Usługi i ceny', href: '#uslugi' },
+    { label: 'Projekty', href: '#projekty' },
     { label: 'Jak pracuję', href: '#proces' },
     { label: 'FAQ', href: '#faq' },
   ],
@@ -58,7 +58,7 @@ export const trustBar = {
 
 export const servicesSection = {
   id: 'uslugi',
-  eyebrow: '02 — Usługi i ceny',
+  eyebrow: '01 — Usługi i ceny',
   title: 'Co mogę dla Ciebie zrobić',
   lead: 'Cztery usługi z ceną „od” podaną z góry. Dokładną kwotę zapisujemy w wycenie, zanim cokolwiek zapłacisz.',
   forWhomLabel: 'Dla kogo:',
@@ -134,7 +134,7 @@ export const care = {
 
 export const projectsSection = {
   id: 'projekty',
-  eyebrow: '01 — Projekty',
+  eyebrow: '02 — Projekty',
   title: 'Projekty, które możesz kliknąć',
   lead: 'Na razie pokazuję własne projekty i jeden projekt pokazowy dla fikcyjnej firmy z Łodzi. Wszystkie działają — sprawdź je na telefonie.',
 } as const;
