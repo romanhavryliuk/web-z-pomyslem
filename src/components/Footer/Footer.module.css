@@ -115,8 +115,11 @@
     flex: 1 1 460px;
   }
 
+  /* На 1440 колонки за шириною вмісту: колонка з e-mail більше не стискає «Usługi». */
   .columns {
     flex: 1 1 420px;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
   }
 
   .logo {
