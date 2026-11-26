@@ -5,7 +5,7 @@ import css from './Header.module.css';
 
 export const Header = () => {
   return (
-    <header className={`container ${css.header}`}>
+    <header className={css.header}>
       <Logo />
       <nav aria-label={nav.ariaLabel} className={css.nav}>
         <ul className={css.list}>
@@ -18,7 +18,7 @@ export const Header = () => {
           ))}
         </ul>
       </nav>
-      <Button href={nav.cta.href} size="sm">
+      <Button href={nav.cta.href} size="sm" className={css.cta}>
         {nav.cta.label}
       </Button>
     </header>

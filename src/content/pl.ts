@@ -1,5 +1,5 @@
 // Усі тексти сайту. Рядки перенесені дослівно з plan-tresci-i-animacje.md.
-//   — нерозривний пробіл: ціни й «24 h» не мають розриватися між рядками.
+//   — нерозривний пробіл: ціни й «1–2 dni» не мають розриватися між рядками.
 
 export const meta = {
   title: 'web z pomysłem — strony i boty dla małych firm w Łodzi',
@@ -12,8 +12,8 @@ export const nav = {
   logo: 'web z pomysłem',
   ariaLabel: 'Główna nawigacja',
   links: [
-    { label: 'Usługi i ceny', href: '#uslugi' },
     { label: 'Projekty', href: '#projekty' },
+    { label: 'Usługi i ceny', href: '#uslugi' },
     { label: 'Jak pracuję', href: '#proces' },
     { label: 'FAQ', href: '#faq' },
   ],
@@ -23,27 +23,41 @@ export const nav = {
 } as const;
 
 export const hero = {
-  eyebrow: 'Strony i boty dla małych firm · Łódź',
-  // Фрагмент highlight має жовтий маркер, тому H1 розбитий на частини.
+  eyebrow: 'Strony internetowe i boty · Łódź',
   title: {
-    before: 'Strony ',
-    highlight: 'z pomysłem',
-    after: ', nie z szablonu.',
+    before: 'Twoja firma. ',
+    highlight: 'Dobrze ',
+    after: 'pokazana.',
   },
   subtitle:
-    'Projektuję i koduję szybkie strony oraz boty na Telegramie dla małych firm z Łodzi. Rozmawiasz bezpośrednio z osobą, która pisze kod, a cenę znasz przed startem.',
-  primaryCta: { label: 'Wyceń projekt →', href: '#kontakt' },
-  secondaryCta: { label: 'Zobacz projekty ↓', href: '#projekty' },
-  note: 'Landing od 1 800 zł · wycena w 1–2 dni · wolne terminy: ',
-  noteHighlight: '[miesiąc]',
-  mascotAlt: 'Gliniana żarówka z uśmiechem przy oknie przeglądarki',
+    'Tworzę strony i boty dla małych firm. Zobacz działające projekty, potem poznaj zakres i ceny.',
+  primaryCta: { label: 'Zobacz działające projekty ↓', href: '#projekty' },
+  secondaryCta: { label: 'Porozmawiajmy', href: '#kontakt' },
+  note: 'Landing page od 800 zł · wycena w 1–2 dni robocze',
+  imageAlt:
+    'Szklana lampa z ciepłą świetlną nicią, mosiężną oprawą i terakotową podstawą',
+  mascotAlt: 'Żarówka — symbol pomysłu',
+  visualCaption: 'Od pierwszej iskry do działającej strony.',
+  project: {
+    eyebrow: 'Projekt pokazowy · marka fikcyjna',
+    name: 'OD NOWA',
+    description: 'Lokalna usługa. Konkretna oferta. Działająca strona.',
+    link: 'Zobacz ten projekt',
+  },
+  continueLabel: 'Odkryj projekty, ceny i sposób współpracy',
+  continueIntro: 'Zobacz, co jest dalej.',
+  chapters: [
+    { label: 'Projekty do sprawdzenia', href: '#projekty' },
+    { label: 'Zakres i ceny', href: '#uslugi' },
+    { label: 'Jak powstaje Twoja strona', href: '#proces' },
+  ],
 } as const;
 
 export const trustBar = {
   ariaLabel: 'Co obiecuję',
   items: [
     { id: 'price', text: 'Stała cena na piśmie' },
-    { id: 'reply', text: 'Odpowiadam w ciągu 24 h (w dni robocze)' },
+    { id: 'reply', text: 'Odpowiadam w 1–2 dni robocze' },
     { id: 'ownership', text: 'Domena na Twoje dane, kod na własność' },
     { id: 'speed', text: 'Cel: PageSpeed 90+ na telefonie' },
     { id: 'languages', text: 'Po polsku i po ukraińsku' },
@@ -52,7 +66,7 @@ export const trustBar = {
 
 export const servicesSection = {
   id: 'uslugi',
-  eyebrow: '01 — Usługi i ceny',
+  eyebrow: '02 — Usługi i ceny',
   title: 'Co mogę dla Ciebie zrobić',
   lead: 'Cztery usługi z ceną „od” podaną z góry. Dokładną kwotę zapisujemy w wycenie, zanim cokolwiek zapłacisz.',
   forWhomLabel: 'Dla kogo:',
@@ -70,7 +84,7 @@ export const services = [
       'Wersja mobilna i podstawowe SEO',
       'Formularz z powiadomieniem na e-mail',
     ],
-    price: 'od 1 800 zł',
+    price: 'od 800 zł',
     time: '7–14 dni',
     cta: 'Wyceń landing →',
   },
@@ -84,7 +98,7 @@ export const services = [
       'Mapa, lokalne SEO i pomoc z profilem firmy w Google',
       'Panel do edycji tekstów i zdjęć',
     ],
-    price: 'od 3 500 zł',
+    price: 'od 2 500 zł',
     time: '2–4 tygodnie',
     cta: 'Wyceń stronę →',
   },
@@ -99,7 +113,7 @@ export const services = [
       'Nowy wygląd, Twoje dotychczasowe treści',
       'Przekierowania starych adresów',
     ],
-    price: 'od 1 500 zł',
+    price: 'od 1 000 zł',
     time: '1–3 tygodnie',
     cta: 'Wyceń redesign →',
   },
@@ -114,21 +128,21 @@ export const services = [
       'Powiadomienia o zamówieniach',
       'Odpowiedzi na częste pytania',
     ],
-    price: 'od 1 500 zł',
+    price: 'od 999 zł',
     time: '1–3 tygodnie',
     cta: 'Wyceń bota →',
   },
 ] as const;
 
 export const care = {
-  title: 'Opieka nad stroną — od 199 zł / mies.',
+  title: 'Opieka nad stroną — od 99 zł / mies.',
   text: 'Aktualizacje, kopie zapasowe i drobne zmiany treści. Możesz zrezygnować w dowolnym miesiącu.',
   cta: { label: 'Zapytaj o opiekę →', href: '#kontakt' },
 } as const;
 
 export const projectsSection = {
   id: 'projekty',
-  eyebrow: '02 — Projekty',
+  eyebrow: '01 — Projekty',
   title: 'Projekty, które możesz kliknąć',
   lead: 'Na razie pokazuję własne projekty i jeden projekt pokazowy dla fikcyjnej firmy z Łodzi. Wszystkie działają — sprawdź je na telefonie.',
 } as const;
@@ -303,16 +317,17 @@ export const faq = [
 
 export const contact = {
   id: 'kontakt',
-  status: 'Wolne terminy: [miesiąc]',
+  status: 'Porozmawiajmy o Twoim projekcie',
   title: 'Bezpłatna wycena albo mini-audyt Twojej strony',
   text: 'Napisz kilka słów o firmie. Odpowiem z wyceną albo pytaniami, a jeśli masz już stronę — także z mini-audytem.',
   // Заглушки в [дужках] Роман заповнює сам.
+  // Порядок: спершу канали, якими користується більшість поляків, Telegram — останнім.
   channels: [
     {
-      id: 'telegram',
-      label: 'Telegram — najszybciej',
-      value: '@[twój_nick]',
-      href: 'https://t.me/[twój_nick]',
+      id: 'whatsapp',
+      label: 'WhatsApp',
+      value: '+48 [numer]',
+      href: 'https://wa.me/48[numer]',
     },
     {
       id: 'email',
@@ -325,6 +340,12 @@ export const contact = {
       label: 'Telefon',
       value: '+48 [numer]',
       href: 'tel:+48[numer]',
+    },
+    {
+      id: 'telegram',
+      label: 'Telegram — także po ukraińsku',
+      value: '@[twój_nick]',
+      href: 'https://t.me/[twój_nick]',
     },
   ],
 } as const;
@@ -368,12 +389,11 @@ export const contactForm = {
     after: '.',
   },
   submit: 'Wyślij zapytanie',
-  note: 'Odpowiadam w ciągu 24 h (w dni robocze).',
+  note: 'Odpowiadam w 1–2 dni robocze.',
   // Нові рядки — потребують вичитки носієм.
   messages: {
     sending: 'Wysyłam…',
-    success:
-      'Dziękuję! Twoje zapytanie dotarło. Odpowiem w ciągu 24 h (w dni robocze).',
+    success: 'Dziękuję! Twoje zapytanie dotarło. Odpowiem w 1–2 dni robocze.',
     error: 'Coś poszło nie tak. Spróbuj ponownie albo napisz na Telegramie.',
     rateLimited: 'Za dużo prób. Spróbuj ponownie za kilka minut.',
     nameInvalid: 'Podaj swoje imię.',
@@ -408,6 +428,7 @@ export const footer = {
       id: 'kontakt',
       title: 'Kontakt',
       links: [
+        { label: 'WhatsApp', href: 'https://wa.me/48[numer]' },
         { label: 'Telegram', href: 'https://t.me/[twój_nick]' },
         {
           label: 'kontakt@webzpomyslem.pl',
@@ -419,8 +440,9 @@ export const footer = {
   ],
   copyright:
     '© 2026 web z pomysłem — szybkie strony i boty na Telegramie dla małych firm z Łodzi, robione przez jedną osobę.',
+  // Сторінки cookies немає: сайт нічого не зберігає на пристрої (ст. 399 PKE).
+  // Повернути посилання, якщо з'явиться аналітика, карти чи вбудоване відео.
   legalLinks: [
     { label: 'Polityka prywatności', href: '/polityka-prywatnosci' },
-    { label: 'Cookies', href: '/cookies' },
   ],
 } as const;

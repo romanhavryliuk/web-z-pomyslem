@@ -9,17 +9,19 @@ import { Process } from '@/components/Process';
 import { PageMotion } from '@/components/PageMotion/PageMotion';
 import { Projects } from '@/components/Projects';
 import { Services } from '@/components/Services';
+import { StructuredData } from '@/components/StructuredData';
 import { TrustBar } from '@/components/TrustBar';
 
 export default function Home() {
   return (
     <>
+      <StructuredData />
       <Header />
       <main id="tresc">
         <Hero />
         <TrustBar />
-        <Services />
         <Projects />
+        <Services />
         <AuditBand />
         <Process />
         <About />

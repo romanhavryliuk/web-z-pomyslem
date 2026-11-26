@@ -41,7 +41,7 @@ const ProjectMock = () => (
 
 export const FeaturedProject = () => {
   return (
-    <article className={css.card}>
+    <article id={featuredProject.id} className={css.card}>
       <ProjectMock />
       <div className={css.info}>
         <Pill variant="badge">{featuredProject.badge}</Pill>
