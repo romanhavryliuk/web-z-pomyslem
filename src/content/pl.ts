@@ -32,10 +32,11 @@ export const hero = {
   subtitle:
     'Projektuję i koduję szybkie strony oraz boty na Telegramie. Rozmawiasz bezpośrednio z osobą, która pisze kod, a cenę znasz przed startem.',
   // Назви й ціни беруться з services за id — щоб ціна в hero не розійшлася з картками.
+  // Перед «·» — нерозривний пробіл: новий рядок не почнеться з крапки.
   priceServiceIds: ['landing', 'firmowa'],
-  priceSeparator: ' · ',
-  primaryCta: { label: 'Wyceń projekt →', href: '#kontakt' },
-  secondaryCta: { label: 'Zobacz projekty ↓', href: '#projekty' },
+  priceSeparator: ' · ',
+  primaryCta: { label: 'Wyceń projekt →', href: '#kontakt' },
+  secondaryCta: { label: 'Zobacz projekty ↓', href: '#projekty' },
   note: 'Bezpłatna wycena na piśmie w 1–2 dni robocze',
   imageAlt:
     'Duża żarówka w stylu retro ze świecącym żarnikiem, w mosiężnej oprawie na terakotowej podstawie',

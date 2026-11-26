@@ -33,8 +33,10 @@ export const Hero = () => {
             {heroPrices.map((service, index) => (
               <Fragment key={service.id}>
                 {index > 0 && hero.priceSeparator}
-                {service.title}{' '}
-                <strong className={css.priceValue}>{service.price}</strong>
+                <span className={css.priceItem}>
+                  {service.title}{' '}
+                  <strong className={css.priceValue}>{service.price}</strong>
+                </span>
               </Fragment>
             ))}
           </p>

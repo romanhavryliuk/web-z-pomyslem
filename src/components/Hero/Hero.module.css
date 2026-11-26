@@ -52,6 +52,10 @@
   font-family: var(--font-display);
   font-weight: 700;
 }
+/* Назва послуги не відривається від ціни — рядок переноситься лише після «·». */
+.priceItem {
+  white-space: nowrap;
+}
 .actions {
   display: flex;
   flex-direction: column;
@@ -101,16 +105,20 @@
   .title {
     font-size: 44px;
   }
+  /* flex: none — кнопки не стискаються до двох рядків; якщо не влазять поруч, друга переходить на новий рядок. */
   .actions {
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 28px;
+    gap: 12px 28px;
   }
   .actions .primary {
+    flex: none;
     padding: 19px 32px;
     font-size: 18px;
   }
   .secondary {
+    flex: none;
     align-self: auto;
   }
 }
