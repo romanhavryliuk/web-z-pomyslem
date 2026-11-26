@@ -12,7 +12,7 @@ export const IdeaLight = () => {
         height={1400}
         fetchPriority="high"
         loading="eager"
-        sizes="(min-width: 1440px) 472px, (min-width: 768px) 288px, calc(100vw - 40px)"
+        sizes="(min-width: 1440px) 472px, (min-width: 768px) 288px, (min-width: 375px) 335px, calc(100vw - 40px)"
         className={css.photograph}
       />
       <figcaption className={css.visualCaption}>
