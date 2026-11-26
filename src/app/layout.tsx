@@ -6,13 +6,14 @@ import './globals.css';
 
 // next/font завантажує шрифти під час білду й віддає з нашого домену —
 // браузер відвідувача не звертається до Google (питання RODO).
+// Кирилиці у видимих текстах немає (сайт польською) — її файли лише конкурували з фото hero. Повернути 'cyrillic', коли з'явиться україномовний текст.
 const onest = Onest({
-  subsets: ['latin', 'latin-ext', 'cyrillic'],
+  subsets: ['latin', 'latin-ext'],
   variable: '--font-onest',
 });
 
 const unbounded = Unbounded({
-  subsets: ['latin', 'latin-ext', 'cyrillic'],
+  subsets: ['latin', 'latin-ext'],
   weight: ['500', '700'],
   variable: '--font-unbounded',
 });

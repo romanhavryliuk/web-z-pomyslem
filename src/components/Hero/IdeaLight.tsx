@@ -10,7 +10,8 @@ export const IdeaLight = () => {
         alt={hero.imageAlt}
         width={1120}
         height={1400}
-        preload
+        fetchPriority="high"
+        loading="eager"
         sizes="(min-width: 1440px) 472px, (min-width: 768px) 288px, calc(100vw - 40px)"
         className={css.photograph}
       />
