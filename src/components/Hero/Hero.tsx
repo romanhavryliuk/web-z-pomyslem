@@ -1,9 +1,14 @@
-import { hero } from '@/content/pl';
+import { Fragment } from 'react';
+import { hero, services } from '@/content/pl';
 import { Button } from '@/components/Button';
 import { IdeaLight } from './IdeaLight';
 import css from './Hero.module.css';
 
 const HERO_TITLE_ID = 'hero-title';
+
+const heroPrices = hero.priceServiceIds
+  .map((id) => services.find((service) => service.id === id))
+  .filter((service) => service !== undefined);
 
 export const Hero = () => {
   return (
@@ -23,8 +28,23 @@ export const Hero = () => {
           {hero.title.after}
         </h1>
         <p className={css.subtitle}>{hero.subtitle}</p>
+        {heroPrices.length > 0 && (
+          <p className={css.price}>
+            {heroPrices.map((service, index) => (
+              <Fragment key={service.id}>
+                {index > 0 && hero.priceSeparator}
+                {service.title}{' '}
+                <strong className={css.priceValue}>{service.price}</strong>
+              </Fragment>
+            ))}
+          </p>
+        )}
         <div className={css.actions}>
-          <Button href={hero.primaryCta.href} size="lg">
+          <Button
+            href={hero.primaryCta.href}
+            size="lg"
+            className={css.primary}
+          >
             {hero.primaryCta.label}
           </Button>
           <a href={hero.secondaryCta.href} className={css.secondary}>

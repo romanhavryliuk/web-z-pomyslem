@@ -23,19 +23,24 @@ export const nav = {
 } as const;
 
 export const hero = {
-  eyebrow: 'Strony internetowe i boty · Łódź',
+  eyebrow: 'Strony i boty dla małych firm · Łódź',
+  // Фрагмент highlight має жовтий маркер, тому H1 розбитий на частини.
+  // Після односкладового «z» — нерозривний пробіл: «z pomysłem» не рветься.
   title: {
-    before: 'Twoja firma. ',
-    highlight: 'Dobrze ',
-    after: 'pokazana.',
+    before: 'Strony ',
+    highlight: 'z pomysłem',
+    after: ', nie z szablonu.',
   },
   subtitle:
-    'Tworzę strony i boty dla małych firm. Zobacz działające projekty, potem poznaj zakres i ceny.',
-  primaryCta: { label: 'Zobacz działające projekty ↓', href: '#projekty' },
-  secondaryCta: { label: 'Porozmawiajmy', href: '#kontakt' },
-  note: 'Landing page od 800 zł · wycena w 1–2 dni robocze',
+    'Projektuję i koduję szybkie strony oraz boty na Telegramie. Rozmawiasz bezpośrednio z osobą, która pisze kod, a cenę znasz przed startem.',
+  // Назви й ціни беруться з services за id — щоб ціна в hero не розійшлася з картками.
+  priceServiceIds: ['landing', 'firmowa'],
+  priceSeparator: ' · ',
+  primaryCta: { label: 'Wyceń projekt →', href: '#kontakt' },
+  secondaryCta: { label: 'Zobacz projekty ↓', href: '#projekty' },
+  note: 'Bezpłatna wycena na piśmie w 1–2 dni robocze',
   imageAlt:
-    'Szklana lampa z ciepłą świetlną nicią, mosiężną oprawą i terakotową podstawą',
+    'Duża żarówka w stylu retro ze świecącym żarnikiem, w mosiężnej oprawie na terakotowej podstawie',
   mascotAlt: 'Żarówka — symbol pomysłu',
   visualCaption: 'Od pierwszej iskry do działającej strony.',
 } as const;
