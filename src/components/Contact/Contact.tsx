@@ -8,11 +8,7 @@ const TITLE_ID = 'kontakt-title';
 
 export const Contact = () => {
   return (
-    <section
-      id={contact.id}
-      aria-labelledby={TITLE_ID}
-      className="container"
-    >
+    <section id={contact.id} aria-labelledby={TITLE_ID} className="container">
       <div className={css.box}>
         <div className={css.intro}>
           <Pill variant="status">{contact.status}</Pill>

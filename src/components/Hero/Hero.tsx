@@ -42,11 +42,7 @@ export const Hero = () => {
           </p>
         )}
         <div className={css.actions}>
-          <Button
-            href={hero.primaryCta.href}
-            size="lg"
-            className={css.primary}
-          >
+          <Button href={hero.primaryCta.href} size="lg" className={css.primary}>
             {hero.primaryCta.label}
           </Button>
           <a href={hero.secondaryCta.href} className={css.secondary}>
