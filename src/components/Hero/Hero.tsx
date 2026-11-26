@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { hero, services } from '@/content/pl';
 import { Button } from '@/components/Button';
-import { IdeaLight } from './IdeaLight';
+import { IdeaLight } from '@/components/IdeaLight';
 import css from './Hero.module.css';
 
 const HERO_TITLE_ID = 'hero-title';

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { hero } from '@/content/pl';
-import css from './Hero.module.css';
+import css from './IdeaLight.module.css';
 
 export const IdeaLight = () => {
   return (
