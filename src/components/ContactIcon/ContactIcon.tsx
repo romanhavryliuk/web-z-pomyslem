@@ -19,6 +19,12 @@ export const ContactIcon = ({ channelId }: ContactIconProps) => {
           <path d="M9 13l12-9" />
         </>
       )}
+      {channelId === 'whatsapp' && (
+        <>
+          <path d="M4 20l1.3-3.9A8.5 8.5 0 1 1 8 18.8z" />
+          <path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z" />
+        </>
+      )}
       {channelId === 'email' && (
         <>
           <rect x="3" y="5" width="18" height="14" rx="3" />
