@@ -1,5 +1,6 @@
 // Усі тексти сайту. Рядки перенесені дослівно з plan-tresci-i-animacje.md.
 //   — нерозривний пробіл: ціни й «1–2 dni» не мають розриватися між рядками.
+// U+2060 (word joiner) після «–» у діапазонах: «2–4 tygodnie» не рветься на тире.
 
 export const meta = {
   title: 'web z pomysłem — strony i boty dla małych firm w Łodzi',
@@ -37,7 +38,7 @@ export const hero = {
   priceSeparator: ' · ',
   primaryCta: { label: 'Wyceń projekt →', href: '#kontakt' },
   secondaryCta: { label: 'Zobacz projekty ↓', href: '#projekty' },
-  note: 'Bezpłatna wycena na piśmie w 1–2 dni robocze',
+  note: 'Bezpłatna wycena na piśmie w 1–⁠2 dni robocze',
   imageAlt:
     'Duża żarówka w stylu retro ze świecącym żarnikiem, w mosiężnej oprawie na terakotowej podstawie',
   mascotAlt: 'Żarówka — symbol pomysłu',
@@ -48,7 +49,7 @@ export const trustBar = {
   ariaLabel: 'Co obiecuję',
   items: [
     { id: 'price', text: 'Stała cena na piśmie' },
-    { id: 'reply', text: 'Odpowiadam w 1–2 dni robocze' },
+    { id: 'reply', text: 'Odpowiadam w 1–⁠2 dni robocze' },
     { id: 'ownership', text: 'Domena na Twoje dane, kod na własność' },
     { id: 'speed', text: 'Cel: PageSpeed 90+ na telefonie' },
     { id: 'languages', text: 'Po polsku i po ukraińsku' },
@@ -76,7 +77,7 @@ export const services = [
       'Formularz z powiadomieniem na e-mail',
     ],
     price: 'od 800 zł',
-    time: '7–14 dni',
+    time: '7–⁠14 dni',
     cta: 'Wyceń landing →',
   },
   {
@@ -90,7 +91,7 @@ export const services = [
       'Panel do edycji tekstów i zdjęć',
     ],
     price: 'od 2 500 zł',
-    time: '2–4 tygodnie',
+    time: '2–⁠4 tygodnie',
     cta: 'Wyceń stronę →',
   },
   {
@@ -105,7 +106,7 @@ export const services = [
       'Przekierowania starych adresów',
     ],
     price: 'od 1 000 zł',
-    time: '1–3 tygodnie',
+    time: '1–⁠3 tygodnie',
     cta: 'Wyceń redesign →',
   },
   {
@@ -120,13 +121,13 @@ export const services = [
       'Odpowiedzi na częste pytania',
     ],
     price: 'od 999 zł',
-    time: '1–3 tygodnie',
+    time: '1–⁠3 tygodnie',
     cta: 'Wyceń bota →',
   },
 ] as const;
 
 export const care = {
-  title: 'Opieka nad stroną — od 99 zł / mies.',
+  title: 'Opieka nad stroną — od 99 zł / mies.',
   text: 'Aktualizacje, kopie zapasowe i drobne zmiany treści. Możesz zrezygnować w dowolnym miesiącu.',
   cta: { label: 'Zapytaj o opiekę →', href: '#kontakt' },
 } as const;
@@ -216,24 +217,24 @@ export const audit = {
 export const processSection = {
   id: 'proces',
   eyebrow: '03 — Jak pracuję',
-  title: 'Od rozmowy do publikacji w 4 krokach',
-  lead: 'Łączny czas podaję w wycenie: landing zwykle 7–14 dni, strona firmowa 2–4 tygodnie.',
+  title: 'Od rozmowy do publikacji w 4 krokach',
+  lead: 'Łączny czas podaję w wycenie: landing zwykle 7–⁠14 dni, strona firmowa 2–⁠4 tygodnie.',
   steps: [
     {
       id: 'rozmowa',
       label: 'Krok 1 · 15 min',
       title: 'Rozmowa',
-      text: 'Online albo przy kawie w Łodzi. Wycenę na piśmie dostajesz w 1–2 dni.',
+      text: 'Online albo przy kawie w Łodzi. Wycenę na piśmie dostajesz w 1–⁠2 dni.',
     },
     {
       id: 'projekt',
-      label: 'Krok 2 · zwykle 2–4 dni',
+      label: 'Krok 2 · zwykle 2–⁠4 dni',
       title: 'Projekt',
       text: 'Makieta i styl. Poprawiamy, zanim napiszę kod.',
     },
     {
       id: 'kodowanie',
-      label: 'Krok 3 · zwykle 1–2 tygodnie',
+      label: 'Krok 3 · zwykle 1–⁠2 tygodnie',
       title: 'Kodowanie',
       text: 'Postęp widzisz na bieżąco pod roboczym linkiem.',
     },
@@ -284,7 +285,7 @@ export const faq = [
     id: 'czas',
     question: 'Ile trwa stworzenie strony?',
     answer:
-      'Landing page zwykle 7–14 dni, strona firmowa 2–4 tygodnie. Termin zapisujemy w wycenie.',
+      'Landing page zwykle 7–⁠14 dni, strona firmowa 2–⁠4 tygodnie. Termin zapisujemy w wycenie.',
   },
   {
     id: 'google',
@@ -387,7 +388,7 @@ export const contactForm = {
     notReady:
       'Wiadomość nie została wysłana — formularz jeszcze nie działa. Napisz do mnie bezpośrednio, kontakty znajdziesz w tej sekcji.',
     sending: 'Wysyłam…',
-    success: 'Dziękuję! Twoje zapytanie dotarło. Odpowiem w 1–2 dni robocze.',
+    success: 'Dziękuję! Twoje zapytanie dotarło. Odpowiem w 1–⁠2 dni robocze.',
     error:
       'Coś poszło nie tak. Spróbuj ponownie albo napisz na WhatsAppie lub e-mailem.',
     rateLimited: 'Za dużo prób. Spróbuj ponownie za kilka minut.',
