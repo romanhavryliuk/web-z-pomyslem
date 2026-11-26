@@ -2,25 +2,18 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  gap: 8px 12px;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 18px 20px 10px;
+  gap: 4px 12px;
+  /* Лише longhand: shorthand padding перебив би горизонтальні відступи .container. */
+  padding-top: 16px;
+  padding-bottom: 4px;
 }
 
-.header > a:first-child {
-  gap: 7px;
-}
-.header > a:first-child > span {
-  font-size: 14px;
-}
 .header .cta {
   min-height: 44px;
   grid-column: 2;
   grid-row: 1;
-  padding: 11px 13px;
-  font-size: 12px;
+  padding: 10px 16px;
+  font-size: 14px;
 }
 
 /* На телефоні посилання не влазять у рядок — прокручуються вбік без смуги прокрутки. */
@@ -38,7 +31,7 @@
 
 .list {
   display: flex;
-  gap: 22px;
+  gap: 16px;
   padding: 0;
   list-style: none;
   white-space: nowrap;
@@ -50,7 +43,7 @@
   display: block;
   padding: 10px 0;
   color: var(--color-choco);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   text-decoration: none;
 }
@@ -81,25 +74,28 @@
 
 @media screen and (min-width: 768px) {
   .header {
-    padding: 24px 32px 12px;
-  }
-  .header > a:first-child > span {
-    font-size: 18px;
+    gap: 8px 24px;
+    padding-top: 20px;
+    padding-bottom: 8px;
   }
   .header .cta {
-    padding: 12px 20px;
-    font-size: 14px;
+    padding: 12px 22px;
+    font-size: 16px;
+  }
+  .list {
+    gap: 28px;
   }
   .link {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1440px) {
   .header {
     grid-template-columns: auto 1fr auto;
-    gap: 32px;
-    padding: 28px 60px 12px;
+    gap: 0 40px;
+    padding-top: 28px;
+    padding-bottom: 12px;
   }
 
   .nav {
@@ -108,14 +104,10 @@
     width: auto;
     justify-self: center;
   }
+  .list {
+    gap: 32px;
+  }
   .header .cta {
     grid-column: 3;
-  }
-}
-
-@media (min-width: 1440px) {
-  .header {
-    padding-right: 100px;
-    padding-left: 100px;
   }
 }
