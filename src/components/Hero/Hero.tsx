@@ -3,15 +3,21 @@ import { Button } from '@/components/Button';
 import { IdeaLight } from './IdeaLight';
 import css from './Hero.module.css';
 
+const HERO_TITLE_ID = 'hero-title';
+
 export const Hero = () => {
   return (
-    <section id="top" className={css.hero}>
+    <section
+      id="top"
+      aria-labelledby={HERO_TITLE_ID}
+      className={`container ${css.hero}`}
+    >
       <div className={css.content}>
         <p className={css.eyebrow}>
           <span className={css.eyebrowLine} aria-hidden="true" />
           {hero.eyebrow}
         </p>
-        <h1 className={css.title}>
+        <h1 id={HERO_TITLE_ID} className={css.title}>
           {hero.title.before}
           <span className={css.marker}>{hero.title.highlight}</span>
           {hero.title.after}
@@ -28,25 +34,6 @@ export const Hero = () => {
         <p className={css.note}>{hero.note}</p>
       </div>
       <IdeaLight />
-      <nav className={css.continue} aria-label={hero.continueLabel}>
-        <p className={css.continueIntro}>
-          {hero.continueIntro}
-          <span aria-hidden="true">↘</span>
-        </p>
-        <ol className={css.chapterList}>
-          {hero.chapters.map((chapter, index) => (
-            <li key={chapter.href}>
-              <a href={chapter.href} className={css.chapter}>
-                <span className={css.chapterNumber}>0{index + 1}</span>
-                <span>{chapter.label}</span>
-                <span className={css.chapterArrow} aria-hidden="true">
-                  ↓
-                </span>
-              </a>
-            </li>
-          ))}
-        </ol>
-      </nav>
     </section>
   );
 };

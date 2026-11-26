@@ -38,19 +38,6 @@ export const hero = {
     'Szklana lampa z ciepłą świetlną nicią, mosiężną oprawą i terakotową podstawą',
   mascotAlt: 'Żarówka — symbol pomysłu',
   visualCaption: 'Od pierwszej iskry do działającej strony.',
-  project: {
-    eyebrow: 'Projekt pokazowy · marka fikcyjna',
-    name: 'OD NOWA',
-    description: 'Lokalna usługa. Konkretna oferta. Działająca strona.',
-    link: 'Zobacz ten projekt',
-  },
-  continueLabel: 'Odkryj projekty, ceny i sposób współpracy',
-  continueIntro: 'Zobacz, co jest dalej.',
-  chapters: [
-    { label: 'Projekty do sprawdzenia', href: '#projekty' },
-    { label: 'Zakres i ceny', href: '#uslugi' },
-    { label: 'Jak powstaje Twoja strona', href: '#proces' },
-  ],
 } as const;
 
 export const trustBar = {
