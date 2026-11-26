@@ -18,8 +18,6 @@ export const nav = {
     { label: 'FAQ', href: '#faq' },
   ],
   cta: { label: 'Wyceń projekt', href: '#kontakt' },
-  menuOpen: 'Otwórz menu',
-  menuClose: 'Zamknij menu',
 } as const;
 
 export const hero = {
@@ -64,7 +62,7 @@ export const servicesSection = {
   forWhomLabel: 'Dla kogo:',
 } as const;
 
-// id збігаються зі значеннями поля «usługa» у формі (lib/validation.ts).
+// id збігаються з id опцій поля «Czego potrzebujesz?» у contactForm.fields.services.
 export const services = [
   {
     id: 'landing',
@@ -77,7 +75,7 @@ export const services = [
       'Formularz z powiadomieniem na e-mail',
     ],
     price: 'od 800 zł',
-    time: '7–14 dni',
+    time: '7–14 dni',
     cta: 'Wyceń landing →',
   },
   {
@@ -91,7 +89,7 @@ export const services = [
       'Panel do edycji tekstów i zdjęć',
     ],
     price: 'od 2 500 zł',
-    time: '2–4 tygodnie',
+    time: '2–4 tygodnie',
     cta: 'Wyceń stronę →',
   },
   {
@@ -106,7 +104,7 @@ export const services = [
       'Przekierowania starych adresów',
     ],
     price: 'od 1 000 zł',
-    time: '1–3 tygodnie',
+    time: '1–3 tygodnie',
     cta: 'Wyceń redesign →',
   },
   {
@@ -121,7 +119,7 @@ export const services = [
       'Odpowiedzi na częste pytania',
     ],
     price: 'od 999 zł',
-    time: '1–3 tygodnie',
+    time: '1–3 tygodnie',
     cta: 'Wyceń bota →',
   },
 ] as const;
@@ -145,7 +143,7 @@ export const featuredProject = {
   title: 'OD NOWA',
   lead: 'Landing page usługi prania kanap z dojazdem w Łodzi.',
   description:
-    'Strona jest kompletna: mobile-first, lekkie zdjęcia WebP, jasna oferta i formularz zapytania (w trybie demo). Tak może wyglądać Twoja.',
+    'Kompletna strona: wygodna na telefonie, szybko się ładuje, ma jasną ofertę i formularz zapytania (w trybie demo). Tak może wyglądać Twoja.',
   tech: ['HTML · CSS · JavaScript', 'Vite', 'GitHub Pages'],
   demo: {
     label: 'Zobacz demo →',
@@ -209,40 +207,40 @@ export const projects = [
 
 export const audit = {
   title: 'Masz już stronę?',
-  text: 'Sprawdzę ją za darmo i odeślę 3 konkretne rzeczy do poprawy razem z wynikiem PageSpeed. Bez zobowiązań.',
-  // Кнопка веде до форми і відмічає там «Mini-audyt».
-  cta: { label: 'Poproś o mini-audyt', href: '#kontakt', service: 'audyt' },
+  text: 'Sprawdzę ją za darmo i wyślę Ci 3 konkretne rzeczy do poprawy razem z wynikiem PageSpeed. Bez zobowiązań.',
+  // Поки веде лише до форми; автоматичне відмічання «Mini-audyt» — окрема задача.
+  cta: { label: 'Poproś o mini-audyt', href: '#kontakt' },
 } as const;
 
 export const processSection = {
   id: 'proces',
   eyebrow: '03 — Jak pracuję',
   title: 'Od rozmowy do publikacji w 4 krokach',
-  lead: 'Łączny czas podaję w wycenie: landing zwykle 7–14 dni, strona firmowa 2–4 tygodnie.',
+  lead: 'Łączny czas podaję w wycenie: landing zwykle 7–14 dni, strona firmowa 2–4 tygodnie.',
   steps: [
     {
       id: 'rozmowa',
-      label: 'Krok 1 · 15 min',
+      label: 'Krok 1 · 15 min',
       title: 'Rozmowa',
-      text: 'Online albo przy kawie w Łodzi. Wycenę na piśmie dostajesz w 1–2 dni.',
+      text: 'Online albo przy kawie w Łodzi. Wycenę na piśmie dostajesz w 1–2 dni.',
     },
     {
       id: 'projekt',
-      label: 'Krok 2 · zwykle 2–4 dni',
+      label: 'Krok 2 · zwykle 2–4 dni',
       title: 'Projekt',
       text: 'Makieta i styl. Poprawiamy, zanim napiszę kod.',
     },
     {
       id: 'kodowanie',
-      label: 'Krok 3 · zwykle 1–2 tygodnie',
+      label: 'Krok 3 · zwykle 1–2 tygodnie',
       title: 'Kodowanie',
       text: 'Postęp widzisz na bieżąco pod roboczym linkiem.',
     },
     {
       id: 'start',
-      label: 'Krok 4 · potem 30 dni poprawek',
+      label: 'Krok 4 · 30 dni poprawek gratis',
       title: 'Start i opieka',
-      text: 'Domena, analityka, publikacja. Potem 30 dni poprawek gratis.',
+      text: 'Podpinam domenę i analitykę, publikuję stronę. Przez 30 dni drobne poprawki robię bez dopłat.',
     },
   ],
 } as const;
@@ -285,7 +283,7 @@ export const faq = [
     id: 'czas',
     question: 'Ile trwa stworzenie strony?',
     answer:
-      'Landing page zwykle 7–14 dni, strona firmowa 2–4 tygodnie. Termin zapisujemy w wycenie.',
+      'Landing page zwykle 7–14 dni, strona firmowa 2–4 tygodnie. Termin zapisujemy w wycenie.',
   },
   {
     id: 'google',
@@ -435,7 +433,7 @@ export const footer = {
     },
   ],
   copyright:
-    '© 2026 web z pomysłem — szybkie strony i boty na Telegramie dla małych firm z Łodzi, robione przez jedną osobę.',
+    '© 2026 web z pomysłem — szybkie strony i boty na Telegramie dla małych firm z Łodzi.',
   // Сторінки cookies немає: сайт нічого не зберігає на пристрої (ст. 399 PKE).
   // Повернути посилання, якщо з'явиться аналітика, карти чи вбудоване відео.
   legalLinks: [
