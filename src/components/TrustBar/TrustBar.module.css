@@ -15,12 +15,14 @@
 
 .item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
 }
 
+/* Галочка на рівні першого рядка, коли текст переноситься. */
 .icon {
   flex: none;
+  margin-top: 4px;
   fill: none;
   stroke: var(--color-sage-dark);
   stroke-width: 2.6;

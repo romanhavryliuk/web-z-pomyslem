@@ -98,6 +98,8 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
   padding: 14px;
+  /* Телефон мокапа заходить на браузер на 48 px — місце, щоб не перекривав пункти. */
+  padding-right: 56px;
 }
 
 .mockFeature {
@@ -212,6 +214,10 @@
 @media screen and (min-width: 768px) {
   .mock {
     padding: 32px;
+  }
+
+  .browserFeatures {
+    padding-right: 14px;
   }
 
   .info {
