@@ -18,7 +18,7 @@ export const Header = () => {
           ))}
         </ul>
       </nav>
-      <Button href={nav.cta.href} size="sm">
+      <Button href={nav.cta.href} size="sm" className={css.cta}>
         {nav.cta.label}
       </Button>
     </header>

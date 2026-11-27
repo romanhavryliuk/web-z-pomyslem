@@ -5,15 +5,17 @@ import { Faq } from '@/components/Faq';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
+import { PageMotion } from '@/components/PageMotion';
 import { Process } from '@/components/Process';
-import { PageMotion } from '@/components/PageMotion/PageMotion';
 import { Projects } from '@/components/Projects';
 import { Services } from '@/components/Services';
+import { StructuredData } from '@/components/StructuredData';
 import { TrustBar } from '@/components/TrustBar';
 
 export default function Home() {
   return (
     <>
+      <StructuredData />
       <Header />
       <main id="tresc">
         <Hero />

@@ -1,4 +1,4 @@
-import type { services } from '@/content/pl';
+import { contact, type services } from '@/content/pl';
 import { ServiceIllustration } from '@/components/ServiceIllustration';
 import css from './ServiceCard.module.css';
 
@@ -36,7 +36,7 @@ export const ServiceCard = ({
           <span className={css.price}>{service.price}</span>
           <span className={css.time}>{service.time}</span>
         </p>
-        <a href="#kontakt" className={css.link}>
+        <a href={`#${contact.id}`} className={css.link}>
           {service.cta}
         </a>
       </div>

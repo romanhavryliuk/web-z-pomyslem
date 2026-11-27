@@ -1,5 +1,6 @@
 // Усі тексти сайту. Рядки перенесені дослівно з plan-tresci-i-animacje.md.
-//   — нерозривний пробіл: ціни й «24 h» не мають розриватися між рядками.
+//   — нерозривний пробіл: ціни й «1–2 dni» не мають розриватися між рядками.
+// U+2060 (word joiner) після «–» у діапазонах: «2–4 tygodnie» не рветься на тире.
 
 export const meta = {
   title: 'web z pomysłem — strony i boty dla małych firm w Łodzi',
@@ -18,32 +19,37 @@ export const nav = {
     { label: 'FAQ', href: '#faq' },
   ],
   cta: { label: 'Wyceń projekt', href: '#kontakt' },
-  menuOpen: 'Otwórz menu',
-  menuClose: 'Zamknij menu',
 } as const;
 
 export const hero = {
   eyebrow: 'Strony i boty dla małych firm · Łódź',
   // Фрагмент highlight має жовтий маркер, тому H1 розбитий на частини.
+  // Після односкладового «z» — нерозривний пробіл: «z pomysłem» не рветься.
   title: {
     before: 'Strony ',
-    highlight: 'z pomysłem',
-    after: ', nie z szablonu.',
+    highlight: 'z pomysłem',
+    after: ', nie z szablonu.',
   },
   subtitle:
-    'Projektuję i koduję szybkie strony oraz boty na Telegramie dla małych firm z Łodzi. Rozmawiasz bezpośrednio z osobą, która pisze kod, a cenę znasz przed startem.',
-  primaryCta: { label: 'Wyceń projekt →', href: '#kontakt' },
-  secondaryCta: { label: 'Zobacz projekty ↓', href: '#projekty' },
-  note: 'Landing od 1 800 zł · wycena w 1–2 dni · wolne terminy: ',
-  noteHighlight: '[miesiąc]',
-  mascotAlt: 'Gliniana żarówka z uśmiechem przy oknie przeglądarki',
+    'Projektuję i koduję szybkie strony oraz boty na Telegramie. Rozmawiasz bezpośrednio z osobą, która pisze kod, a cenę znasz przed startem.',
+  // Назви й ціни беруться з services за id — щоб ціна в hero не розійшлася з картками.
+  // Перед «·» — нерозривний пробіл: новий рядок не почнеться з крапки.
+  priceServiceIds: ['landing', 'firmowa'],
+  priceSeparator: ' · ',
+  primaryCta: { label: 'Wyceń projekt →', href: '#kontakt' },
+  secondaryCta: { label: 'Zobacz projekty ↓', href: '#projekty' },
+  note: 'Bezpłatna wycena na piśmie w 1–⁠2 dni robocze',
+  imageAlt:
+    'Duża żarówka w stylu retro ze świecącym żarnikiem, w mosiężnej oprawie na terakotowej podstawie',
+  mascotAlt: 'Żarówka — symbol pomysłu',
+  visualCaption: 'Od pierwszej iskry do działającej strony.',
 } as const;
 
 export const trustBar = {
   ariaLabel: 'Co obiecuję',
   items: [
     { id: 'price', text: 'Stała cena na piśmie' },
-    { id: 'reply', text: 'Odpowiadam w ciągu 24 h (w dni robocze)' },
+    { id: 'reply', text: 'Odpowiadam w 1–⁠2 dni robocze' },
     { id: 'ownership', text: 'Domena na Twoje dane, kod na własność' },
     { id: 'speed', text: 'Cel: PageSpeed 90+ na telefonie' },
     { id: 'languages', text: 'Po polsku i po ukraińsku' },
@@ -58,7 +64,7 @@ export const servicesSection = {
   forWhomLabel: 'Dla kogo:',
 } as const;
 
-// id збігаються зі значеннями поля «usługa» у формі (lib/validation.ts).
+// id збігаються з id опцій поля «Czego potrzebujesz?» у contactForm.fields.services.
 export const services = [
   {
     id: 'landing',
@@ -70,8 +76,8 @@ export const services = [
       'Wersja mobilna i podstawowe SEO',
       'Formularz z powiadomieniem na e-mail',
     ],
-    price: 'od 1 800 zł',
-    time: '7–14 dni',
+    price: 'od 800 zł',
+    time: '7–⁠14 dni',
     cta: 'Wyceń landing →',
   },
   {
@@ -84,8 +90,8 @@ export const services = [
       'Mapa, lokalne SEO i pomoc z profilem firmy w Google',
       'Panel do edycji tekstów i zdjęć',
     ],
-    price: 'od 3 500 zł',
-    time: '2–4 tygodnie',
+    price: 'od 2 500 zł',
+    time: '2–⁠4 tygodnie',
     cta: 'Wyceń stronę →',
   },
   {
@@ -99,8 +105,8 @@ export const services = [
       'Nowy wygląd, Twoje dotychczasowe treści',
       'Przekierowania starych adresów',
     ],
-    price: 'od 1 500 zł',
-    time: '1–3 tygodnie',
+    price: 'od 1 000 zł',
+    time: '1–⁠3 tygodnie',
     cta: 'Wyceń redesign →',
   },
   {
@@ -114,14 +120,14 @@ export const services = [
       'Powiadomienia o zamówieniach',
       'Odpowiedzi na częste pytania',
     ],
-    price: 'od 1 500 zł',
-    time: '1–3 tygodnie',
+    price: 'od 999 zł',
+    time: '1–⁠3 tygodnie',
     cta: 'Wyceń bota →',
   },
 ] as const;
 
 export const care = {
-  title: 'Opieka nad stroną — od 199 zł / mies.',
+  title: 'Opieka nad stroną — od 99 zł / mies.',
   text: 'Aktualizacje, kopie zapasowe i drobne zmiany treści. Możesz zrezygnować w dowolnym miesiącu.',
   cta: { label: 'Zapytaj o opiekę →', href: '#kontakt' },
 } as const;
@@ -139,7 +145,7 @@ export const featuredProject = {
   title: 'OD NOWA',
   lead: 'Landing page usługi prania kanap z dojazdem w Łodzi.',
   description:
-    'Strona jest kompletna: mobile-first, lekkie zdjęcia WebP, jasna oferta i formularz zapytania (w trybie demo). Tak może wyglądać Twoja.',
+    'Kompletna strona: wygodna na telefonie, szybko się ładuje, ma jasną ofertę i formularz zapytania (w trybie demo). Tak może wyglądać Twoja.',
   tech: ['HTML · CSS · JavaScript', 'Vite', 'GitHub Pages'],
   demo: {
     label: 'Zobacz demo →',
@@ -203,40 +209,40 @@ export const projects = [
 
 export const audit = {
   title: 'Masz już stronę?',
-  text: 'Sprawdzę ją za darmo i odeślę 3 konkretne rzeczy do poprawy razem z wynikiem PageSpeed. Bez zobowiązań.',
-  // Кнопка веде до форми і відмічає там «Mini-audyt».
-  cta: { label: 'Poproś o mini-audyt', href: '#kontakt', service: 'audyt' },
+  text: 'Sprawdzę ją za darmo i wyślę Ci 3 konkretne rzeczy do poprawy razem z wynikiem PageSpeed. Bez zobowiązań.',
+  // Поки веде лише до форми; автоматичне відмічання «Mini-audyt» — окрема задача.
+  cta: { label: 'Poproś o mini-audyt', href: '#kontakt' },
 } as const;
 
 export const processSection = {
   id: 'proces',
   eyebrow: '03 — Jak pracuję',
-  title: 'Od rozmowy do publikacji w 4 krokach',
-  lead: 'Łączny czas podaję w wycenie: landing zwykle 7–14 dni, strona firmowa 2–4 tygodnie.',
+  title: 'Od rozmowy do publikacji w 4 krokach',
+  lead: 'Łączny czas podaję w wycenie: landing zwykle 7–⁠14 dni, strona firmowa 2–⁠4 tygodnie.',
   steps: [
     {
       id: 'rozmowa',
-      label: 'Krok 1 · 15 min',
+      label: 'Krok 1 · 15 min',
       title: 'Rozmowa',
-      text: 'Online albo przy kawie w Łodzi. Wycenę na piśmie dostajesz w 1–2 dni.',
+      text: 'Online albo przy kawie w Łodzi. Wycenę na piśmie dostajesz w 1–⁠2 dni.',
     },
     {
       id: 'projekt',
-      label: 'Krok 2 · zwykle 2–4 dni',
+      label: 'Krok 2 · zwykle 2–⁠4 dni',
       title: 'Projekt',
       text: 'Makieta i styl. Poprawiamy, zanim napiszę kod.',
     },
     {
       id: 'kodowanie',
-      label: 'Krok 3 · zwykle 1–2 tygodnie',
+      label: 'Krok 3 · zwykle 1–⁠2 tygodnie',
       title: 'Kodowanie',
       text: 'Postęp widzisz na bieżąco pod roboczym linkiem.',
     },
     {
       id: 'start',
-      label: 'Krok 4 · potem 30 dni poprawek',
+      label: 'Krok 4 · 30 dni poprawek gratis',
       title: 'Start i opieka',
-      text: 'Domena, analityka, publikacja. Potem 30 dni poprawek gratis.',
+      text: 'Podpinam domenę i analitykę, publikuję stronę. Przez 30 dni drobne poprawki robię bez dopłat.',
     },
   ],
 } as const;
@@ -279,7 +285,7 @@ export const faq = [
     id: 'czas',
     question: 'Ile trwa stworzenie strony?',
     answer:
-      'Landing page zwykle 7–14 dni, strona firmowa 2–4 tygodnie. Termin zapisujemy w wycenie.',
+      'Landing page zwykle 7–⁠14 dni, strona firmowa 2–⁠4 tygodnie. Termin zapisujemy w wycenie.',
   },
   {
     id: 'google',
@@ -307,12 +313,13 @@ export const contact = {
   title: 'Bezpłatna wycena albo mini-audyt Twojej strony',
   text: 'Napisz kilka słów o firmie. Odpowiem z wyceną albo pytaniami, a jeśli masz już stronę — także z mini-audytem.',
   // Заглушки в [дужках] Роман заповнює сам.
+  // Порядок: спершу канали, якими користується більшість поляків, Telegram — останнім.
   channels: [
     {
-      id: 'telegram',
-      label: 'Telegram — najszybciej',
-      value: '@[twój_nick]',
-      href: 'https://t.me/[twój_nick]',
+      id: 'whatsapp',
+      label: 'WhatsApp',
+      value: '+48 [numer]',
+      href: 'https://wa.me/48[numer]',
     },
     {
       id: 'email',
@@ -326,12 +333,19 @@ export const contact = {
       value: '+48 [numer]',
       href: 'tel:+48[numer]',
     },
+    {
+      id: 'telegram',
+      label: 'Telegram — także po ukraińsku',
+      value: '@[twój_nick]',
+      href: 'https://t.me/[twój_nick]',
+    },
   ],
 } as const;
 
 export const contactForm = {
   ariaLabel: 'Formularz kontaktowy',
   optionalHint: '(opcjonalnie)',
+  // isRequired — для серверної валідації на етапі відправки.
   fields: {
     name: {
       label: 'Imię',
@@ -368,13 +382,15 @@ export const contactForm = {
     after: '.',
   },
   submit: 'Wyślij zapytanie',
-  note: 'Odpowiadam w ciągu 24 h (w dni robocze).',
-  // Нові рядки — потребують вичитки носієм.
+  note: 'Formularz jeszcze nie wysyła wiadomości. Do tego czasu napisz do mnie bezpośrednio — kontakty znajdziesz w tej sekcji.',
+  // notReady — поки форма не надсилає. Решта — для етапу відправки (Server Action), поки не використовується свідомо. Потребують вичитки носієм.
   messages: {
+    notReady:
+      'Wiadomość nie została wysłana — formularz jeszcze nie działa. Napisz do mnie bezpośrednio, kontakty znajdziesz w tej sekcji.',
     sending: 'Wysyłam…',
-    success:
-      'Dziękuję! Twoje zapytanie dotarło. Odpowiem w ciągu 24 h (w dni robocze).',
-    error: 'Coś poszło nie tak. Spróbuj ponownie albo napisz na Telegramie.',
+    success: 'Dziękuję! Twoje zapytanie dotarło. Odpowiem w 1–⁠2 dni robocze.',
+    error:
+      'Coś poszło nie tak. Spróbuj ponownie albo napisz na WhatsAppie lub e-mailem.',
     rateLimited: 'Za dużo prób. Spróbuj ponownie za kilka minut.',
     nameInvalid: 'Podaj swoje imię.',
     contactInvalid: 'Podaj e-mail lub numer telefonu, żebym mógł odpowiedzieć.',
@@ -408,6 +424,7 @@ export const footer = {
       id: 'kontakt',
       title: 'Kontakt',
       links: [
+        { label: 'WhatsApp', href: 'https://wa.me/48[numer]' },
         { label: 'Telegram', href: 'https://t.me/[twój_nick]' },
         {
           label: 'kontakt@webzpomyslem.pl',
@@ -418,9 +435,10 @@ export const footer = {
     },
   ],
   copyright:
-    '© 2026 web z pomysłem — szybkie strony i boty na Telegramie dla małych firm z Łodzi, robione przez jedną osobę.',
+    '© 2026 web z pomysłem — szybkie strony i boty na Telegramie dla małych firm z Łodzi.',
+  // Сторінки cookies немає: сайт нічого не зберігає на пристрої (ст. 399 PKE).
+  // Повернути посилання, якщо з'явиться аналітика, карти чи вбудоване відео.
   legalLinks: [
     { label: 'Polityka prywatności', href: '/polityka-prywatnosci' },
-    { label: 'Cookies', href: '/cookies' },
   ],
 } as const;

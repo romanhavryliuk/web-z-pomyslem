@@ -1,7 +1,9 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  /* Лого — елемент сітки header; без цього посилання розтягується на всю клітинку й клік у порожнечу веде нагору. */
+  justify-self: start;
   color: var(--color-choco);
   text-decoration: none;
 }
@@ -13,6 +15,15 @@
 .text {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 18px;
+  font-size: 15px;
   letter-spacing: -0.02em;
+}
+
+@media screen and (min-width: 768px) {
+  .logo {
+    gap: 10px;
+  }
+  .text {
+    font-size: 18px;
+  }
 }

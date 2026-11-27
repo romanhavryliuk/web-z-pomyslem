@@ -1,4 +1,5 @@
 .card {
+  scroll-margin-top: 28px;
   display: grid;
   overflow: hidden;
   border-radius: 32px;
@@ -97,6 +98,8 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
   padding: 14px;
+  /* Телефон мокапа заходить на браузер на 48 px — місце, щоб не перекривав пункти. */
+  padding-right: 56px;
 }
 
 .mockFeature {

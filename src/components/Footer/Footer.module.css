@@ -36,6 +36,11 @@
   font-size: 16px;
 }
 
+/* Колонка «Kontakt» — остання в footer.columns; на всю ширину, щоб e-mail не рвався. */
+.column:last-child {
+  grid-column: 1 / -1;
+}
+
 .columnTitle {
   color: var(--color-muted);
   font-size: 14px;
@@ -88,7 +93,11 @@
   }
 
   .columns {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr)) auto;
+  }
+
+  .column:last-child {
+    grid-column: auto;
   }
 }
 
@@ -106,8 +115,11 @@
     flex: 1 1 460px;
   }
 
+  /* На 1440 колонки за шириною вмісту: колонка з e-mail більше не стискає «Usługi». */
   .columns {
     flex: 1 1 420px;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
   }
 
   .logo {

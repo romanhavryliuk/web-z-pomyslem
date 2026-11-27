@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import type { FormEvent } from 'react';
 import { contactForm } from '@/content/pl';
 import { Button } from '@/components/Button';
@@ -8,10 +9,13 @@ import css from './ContactForm.module.css';
 const { fields, consent } = contactForm;
 
 export const ContactForm = () => {
-  // Відправка ще не підключена (Server Action — окремий етап).
+  const [isNoticeShown, setIsNoticeShown] = useState(false);
+
+  // Відправка ще не підключена: замість мовчання показуємо, що лист не пішов.
   // Без preventDefault браузер відправив би дані GET-запитом і показав би їх в адресі.
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setIsNoticeShown(true);
   };
 
   return (
@@ -98,7 +102,12 @@ export const ContactForm = () => {
       <Button type="submit" size="lg" className={css.submit}>
         {contactForm.submit}
       </Button>
-      <p className={css.note}>{contactForm.note}</p>
+      <p
+        role="status"
+        className={isNoticeShown ? `${css.note} ${css.noteAlert}` : css.note}
+      >
+        {isNoticeShown ? contactForm.messages.notReady : contactForm.note}
+      </p>
     </form>
   );
 };

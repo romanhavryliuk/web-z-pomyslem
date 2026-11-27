@@ -1,0 +1,32 @@
+/* min-width: 0 — фігура є елементом сітки hero і не повинна розпирати колонку. */
+.visual {
+  min-width: 0;
+  margin: 0;
+}
+.photograph {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: 50% 45%;
+  border-radius: 24px;
+  box-shadow: var(--shadow-clay);
+}
+.visualCaption {
+  margin-top: 12px;
+  color: var(--color-muted);
+  font-size: 14px;
+  text-align: left;
+}
+
+@media screen and (min-width: 768px) {
+  .photograph {
+    aspect-ratio: 4 / 5;
+    object-position: 50% 50%;
+    border-radius: 32px;
+  }
+  .visualCaption {
+    text-align: right;
+  }
+}

@@ -2,6 +2,15 @@
 
 import { useEffect } from 'react';
 
+const REVEAL_DURATION_MS = 420;
+// Дублює --motion-ease з globals.css: Web Animations API не читає CSS-змінні напряму.
+const REVEAL_EASING = 'cubic-bezier(0.22, 1, 0.36, 1)';
+// Старт з 0.7, а не з 0: текст читабельний навіть до гідратації й без JS.
+const REVEAL_START_OPACITY = 0.7;
+const REVEAL_OFFSET_PX = 10;
+const OBSERVER_THRESHOLD = 0.08;
+const OBSERVER_ROOT_MARGIN = '0px 0px -24px 0px';
+
 export const PageMotion = () => {
   useEffect(() => {
     if (!('IntersectionObserver' in window) || !Element.prototype.animate)
@@ -25,19 +34,21 @@ export const PageMotion = () => {
           )
             continue;
 
-          // Content is always readable, including before hydration and without JS.
           const animation = entry.target.animate(
             [
-              { opacity: 0.7, transform: 'translateY(10px)' },
+              {
+                opacity: REVEAL_START_OPACITY,
+                transform: `translateY(${REVEAL_OFFSET_PX}px)`,
+              },
               { opacity: 1, transform: 'translateY(0)' },
             ],
-            { duration: 420, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' },
+            { duration: REVEAL_DURATION_MS, easing: REVEAL_EASING },
           );
           animations.set(entry.target, animation);
           animation.onfinish = () => animations.delete(entry.target);
         }
       },
-      { threshold: 0.08, rootMargin: '0px 0px -24px 0px' },
+      { threshold: OBSERVER_THRESHOLD, rootMargin: OBSERVER_ROOT_MARGIN },
     );
 
     const cancel = () => {
@@ -54,7 +65,7 @@ export const PageMotion = () => {
     };
     for (const target of targets) {
       const bounds = target.getBoundingClientRect();
-      // Leave the first screen and restored scroll positions immediately visible.
+      // Перший екран і відновлену позицію прокрутки лишаємо видимими одразу, без анімації.
       if (bounds.top < window.innerHeight && bounds.bottom > 0)
         seen.add(target);
       else observer.observe(target);
